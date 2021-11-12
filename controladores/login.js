@@ -7,19 +7,19 @@ const login = async (req, res) => {
     const { username, senha } = req.body;
 
     if (!username || !senha) {
-        return res.status(400).json("É obrigatório username e senha");
+        return res.status(400).json("É obrigatório username e senha!");
     }
     try {
         const usuario = await knex('usuarios').where({ username }).first();
 
         if (!usuario) {
-            return res.status(400).json("O usuário não foi encontrado");
+            return res.status(400).json("O usuário não foi encontrado!");
         }
 
         const senhaCorreta = await bcrypt.compare(senha, usuario.senha);
 
         if (!senhaCorreta) {
-            return res.status(400).json("Email ou senha não conferem");
+            return res.status(400).json("Email ou senha não conferem!");
         }
 
         const dadosTokenUsuario = {

@@ -83,7 +83,7 @@ const comentarPostagem = async (req, res) => {
         });
 
         if (!comentario) {
-            return res.status(400).json("Não foi possivel comentar nessa postagem");
+            return res.status(400).json("Não foi possivel comentar nessa postagem!");
         }
 
         return res.status(200).json("Postagem comentada com sucesso!");

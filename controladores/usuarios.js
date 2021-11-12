@@ -14,7 +14,7 @@ const cadastrarUsuario = async (req, res) => {
     }
 
     if (senha.length < 5) {
-        res.status(404).json("A senha deve conter no minimo, 5 caracteres");
+        res.status(404).json("A senha deve conter no minimo, 5 caracteres!");
     }
 
     try {
